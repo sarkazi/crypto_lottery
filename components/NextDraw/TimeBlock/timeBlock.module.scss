@@ -1,0 +1,12 @@
+.item {
+  @apply py-[28px] bg-borderStat relative flex-center-center animate-pulse;
+  span {
+    @apply text-4xl font-semibold text-[#];
+  }
+  .absoluteElement {
+    @apply absolute text-xs uppercase;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

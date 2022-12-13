@@ -1,0 +1,9 @@
+.button {
+  @apply flex items-center justify-center py-[10px] px-[20px] text-sm  rounded-[3px] cursor-pointer font-bold;
+  &.isActive {
+    @apply bg-green-600;
+  }
+  &:hover {
+    @apply bg-green-600;
+  }
+}

@@ -1,0 +1,23 @@
+.main {
+  @apply px-5 pt-5 pb-12 self-start;
+  .titleBlock {
+    @apply py-[30px];
+    h1 {
+      @apply font-bold text-5xl text-center;
+    }
+  }
+  .statBlock {
+    @apply grid gap-x-[15px] mb-[30px];
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    .statItem {
+      h2 {
+        @apply text-sm;
+      }
+      p {
+        @apply text-2xl font-semibold uppercase;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}

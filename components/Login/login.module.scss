@@ -1,0 +1,18 @@
+.main {
+  @apply bg-bgColor min-h-screen flex-center-center text-white;
+  .content {
+    @apply flex flex-col items-center;
+    img {
+      @apply rounded-full w-[100px] h-[100px] mb-[20px];
+    }
+    h1 {
+      @apply uppercase text-5xl font-bold text-center mb-[5px];
+    }
+    h2 {
+      @apply text-[16px] mb-[30px];
+    }
+    .loginBtn {
+      @apply bg-white rounded-[6px] flex-center-center py-[10px] px-[25px] font-semibold text-black text-[17px];
+    }
+  }
+}

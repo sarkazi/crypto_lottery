@@ -1,0 +1,26 @@
+.changePriceBlock {
+  @apply text-white self-start;
+  .changeTitleBlock {
+    @apply flex-align-between w-full mb-[15px];
+    h2 {
+    }
+    p {
+      @apply uppercase;
+    }
+  }
+  .changeInputBlock {
+    @apply bg-bgColor border-borderStat p-4 border flex-align-between w-full gap-x-[10px] mb-[10px];
+    span {
+      @apply uppercase;
+    }
+    input {
+      @apply w-full bg-transparent outline-none text-right;
+    }
+  }
+  .textListBlock {
+    @apply flex flex-col space-y-1 mb-[20px];
+  }
+  .drawBtn {
+    @apply bg-gradient-to-br w-full from-orange-500 to-green-600 py-[10px] flex-center-center rounded-[5px] hover:to-green-700 shadow-xl disabled:from-gray-600 disabled:to-gray-600 disabled:cursor-default disabled:text-gray-100;
+  }
+}

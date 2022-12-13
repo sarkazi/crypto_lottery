@@ -1,0 +1,10 @@
+.timeBlock {
+  @apply flex-col-i-center;
+  h2 {
+    @apply text-center text-xl mb-[20px];
+  }
+  .timeList {
+    @apply grid gap-x-[10px] w-full;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
