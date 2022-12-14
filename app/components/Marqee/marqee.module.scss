@@ -1,0 +1,6 @@
+.marqee {
+  @apply bg-bgColor  my-[20px] py-[10px];
+  .main {
+    @apply text-white flex gap-x-[30px];
+  }
+}

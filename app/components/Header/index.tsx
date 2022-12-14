@@ -1,13 +1,12 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import Button from "../Button";
 import Layout from "../Layout";
 import styles from "./header.module.scss";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
-import { useAddress, useDisconnect } from "@thirdweb-dev/react";
+import { useTWImports } from "../../hooks/useTWImports";
 
 const Header: FC = () => {
-  const address = useAddress();
-  const disconnect = useDisconnect();
+  const { address, disconnect } = useTWImports();
 
   return (
     <header className={styles.header}>
@@ -25,7 +24,7 @@ const Header: FC = () => {
           </div>
         </div>
         <div className={styles.buttonBlock}>
-          <Button isActive text="Buy Tickets" />
+          <Button link="#price-block" isActive text="Buy Tickets" />
           <Button onClick={disconnect} text="Logout" />
         </div>
         <div className={styles.burgerBtn}>

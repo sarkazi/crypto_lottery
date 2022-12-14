@@ -9,7 +9,7 @@
     }
   }
   .changeInputBlock {
-    @apply bg-bgColor border-borderStat p-4 border flex-align-between w-full gap-x-[10px] mb-[10px];
+    @apply border-borderStat p-4 border flex-align-between w-full gap-x-[10px] mb-[10px];
     span {
       @apply uppercase;
     }

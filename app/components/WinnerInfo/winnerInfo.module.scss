@@ -1,0 +1,6 @@
+.main {
+  @apply max-w-[600px] text-black pt-[20px] mx-auto w-full px-[15px] mx-[-15px];
+  .btn {
+    @apply bg-gradient-to-b from-orange-600 to-green-700 rounded-[10px] animate-pulse w-full py-[20px] text-sm;
+  }
+}

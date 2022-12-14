@@ -1,6 +1,6 @@
 .page {
-  @apply bg-bgColor min-h-screen flex flex-col overflow-hidden items-center;
+  @apply bg-bgColor2 min-h-screen flex flex-col overflow-hidden items-center;
   .wrapper {
-    @apply grid gap-x-[30px] mt-[45px] md:grid-cols-2 grid-cols-1 my-[50px] px-[15px] md:max-w-[900px] w-full flex-1;
+    @apply grid gap-x-[30px] mt-[45px] md:grid-cols-2 grid-cols-1 my-[50px] px-[15px] md:max-w-[900px] w-full flex-1 gap-y-[30px];
   }
 }

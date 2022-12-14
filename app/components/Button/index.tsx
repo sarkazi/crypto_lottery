@@ -5,7 +5,8 @@ import clsx from "clsx";
 interface ButtonProps {
   text: string;
   isActive?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
+  link?: string;
 }
 
 const Button: FC<ButtonProps> = ({ text, isActive, onClick }) => {

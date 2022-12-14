@@ -1,12 +1,11 @@
-import { useContract, useMetamask } from "@thirdweb-dev/react";
 import Layout from "../Layout";
 import styles from "./login.module.scss";
 import { PropagateLoader } from "react-spinners";
-const Login = () => {
-  const connectMyMetamask = useMetamask();
-  const { isLoading } = useContract(
-    process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS
-  );
+import { useTWImports } from "../../hooks/useTWImports";
+import { FC } from "react";
+
+const Login: FC = () => {
+  const { connectMyMetamask, isLoading } = useTWImports();
 
   return (
     <div className={styles.main}>

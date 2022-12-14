@@ -1,8 +1,8 @@
 import Countdown from "react-countdown";
-import { useContract, useContractRead } from "@thirdweb-dev/react";
 import { FC } from "react";
 import TimeBlock from "../NextDraw/TimeBlock";
 import styles from "./countdownTimer.module.scss";
+import { useTWImports } from "../../hooks/useTWImports";
 
 interface Props {
   minutes: number;
@@ -12,11 +12,7 @@ interface Props {
 }
 
 const CountdownTimer: FC = () => {
-  const { contract } = useContract(
-    process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS
-  );
-
-  const { data: expiration } = useContractRead(contract, "expiration");
+  const { expiration } = useTWImports();
 
   const renderer = ({ minutes, hours, seconds, completed }: Props) => {
     if (completed) {

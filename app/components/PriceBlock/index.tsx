@@ -1,28 +1,22 @@
 import styles from "./priceBlock.module.scss";
 import { FC, useState } from "react";
 import DescTextPrice from "./DescTextPrice";
-import { formatData } from "../../utils/formatData";
-import {
-  useContract,
-  useContractRead,
-  useContractWrite,
-} from "@thirdweb-dev/react";
+import { formatData, formatDataForPurchase } from "../../hooks/useFormatData";
 import toast from "react-hot-toast";
-import { ethers } from "ethers";
+import { currency } from "../../../constants";
 
-const PriceBlock: FC = ({
-  ticketPrice,
-  ticketCommission,
-  expiration,
-  RemainingTickets,
-}) => {
+import { useTWImports } from "../../hooks/useTWImports";
+
+const PriceBlock: FC = () => {
+  const {
+    BuyTickets,
+    ticketPrice,
+    ticketCommission,
+    expiration,
+    RemainingTickets,
+  } = useTWImports();
+
   const [quantity, setQuantity] = useState<number>(1);
-
-  const { contract } = useContract(
-    process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS
-  );
-
-  const { mutateAsync: BuyTickets } = useContractWrite(contract, "BuyTickets");
 
   const handleClick = async () => {
     if (!ticketPrice) return;
@@ -31,11 +25,7 @@ const PriceBlock: FC = ({
     try {
       const data = await BuyTickets([
         {
-          value: ethers.utils.parseEther(
-            (
-              Number(ethers.utils.formatEther(ticketPrice)) * quantity
-            ).toString()
-          ),
+          value: formatDataForPurchase(ticketPrice, quantity),
         },
       ]);
 
@@ -50,13 +40,16 @@ const PriceBlock: FC = ({
   };
 
   return (
-    <div className={`${styles.changePriceBlock} stats-сontainer p-5`}>
-      <div className="stats-сontainer w-full p-5">
+    <div
+      id="price-block"
+      className={`${styles.changePriceBlock} stats-сontainer p-5`}
+    >
+      <div className="stats-сontainer w-full p-5 ">
         <div className={styles.changeTitleBlock}>
           <h2>Price per ticket</h2>
           <p>{formatData(ticketPrice)}</p>
         </div>
-        <div className={styles.changeInputBlock}>
+        <div className={`${styles.changeInputBlock} bg-bgColor2`}>
           <span>tickets</span>
           <input
             type="number"
@@ -94,7 +87,9 @@ const PriceBlock: FC = ({
           onClick={handleClick}
           className={styles.drawBtn}
         >
-          Buy Tickets
+          Buy {quantity} Tickets for{" "}
+          {ticketPrice && +formatData(ticketPrice).split(" ")[0] * quantity}{" "}
+          {currency}
         </button>
       </div>
     </div>
