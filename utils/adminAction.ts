@@ -2,16 +2,16 @@ import toast from "react-hot-toast";
 
 export const toastTexts = {
   loading: {
-    drawWinner: "Picking a lucky winner...",
-    onRestartDraw: "Restarting draw...",
-    onWithDrawComission: "Withdrawing comission...",
-    RefundAll: "Refunding all...",
+    drawWinner: "Выбираем счастливчика...",
+    onRestartDraw: "Перезапуск розыгрыша...",
+    onWithDrawComission: "Отзываем комиссию...",
+    RefundAll: "Возвращаем средства...",
   },
   success: {
-    drawWinner: "A Winner has been selected!",
-    onRestartDraw: "Draw restarted successfully!",
-    onWithDrawComission: "Your comission has been withdrawn successfully!",
-    RefundAll: "All refunded successfully!",
+    drawWinner: "Счастливчик выбран!",
+    onRestartDraw: "Розыгрыш перезапущен. Удачи!",
+    onWithDrawComission: "Комиссия отозвана!",
+    RefundAll: "Возврат средств успешно завершён!",
   },
 };
 
@@ -30,7 +30,7 @@ export const adminAction = async (
     });
   } catch (err) {
     console.log(err);
-    toast.error("Whoops something went wrong", {
+    toast.error("Упппсс, что-то пошло не так... :(", {
       id: notification,
     });
   }

@@ -9,7 +9,7 @@ const TicketCount: FC<TicketCount> = ({ userTickets }) => {
   return (
     <section className="stats-сontainer text-white p-[20px] mt-[20px] flex flex-col">
       <p className="self-center text-center mb-[15px]">
-        You have {userTickets} tickets
+        У Вас {userTickets} билетов
       </p>
       <ul className={`${styles.list} grid gap-[10px]`}>
         {Array(userTickets)

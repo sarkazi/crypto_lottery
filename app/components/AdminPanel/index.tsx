@@ -24,9 +24,9 @@ const AdminPanel: FC = () => {
 
   return (
     <section className=" mt-[30px] p-[20px] md:max-w-[600px] w-full text-white bg-bgColor2 border-borderStat border rounded-[10px] p flex flex-col items-center">
-      <h2 className="text-xl font-semibold mb-[5px]">Admin Controls</h2>
+      <h2 className="text-xl font-semibold mb-[5px]">Админ панель</h2>
       <p className="text-sm mb-[20px] text-center">
-        Total comission to be withdrawn: {formatData(totalCommission)}
+        Общая комиссия: {formatData(totalCommission)}
       </p>
       <ul
         className={`${styles.list} grid md:grid-cols-4 w-full gap-y-[10px] grid-cols-1 gap-x-[10px]`}
@@ -40,7 +40,7 @@ const AdminPanel: FC = () => {
             )
           }
           icon={<StarIcon />}
-          text="Draw Winner"
+          text="Выбрать победителя"
         />
         <Item
           onClick={() =>
@@ -51,7 +51,7 @@ const AdminPanel: FC = () => {
             )
           }
           icon={<CurrencyDollarIcon />}
-          text="Withdraw Comission"
+          text="Отозвать комиссию"
         />
         <Item
           icon={<ArrowPathIcon />}
@@ -62,7 +62,7 @@ const AdminPanel: FC = () => {
               toastTexts.success.onRestartDraw
             )
           }
-          text="Restart Draw"
+          text="Перезапустить розыгрыш"
         />
         <Item
           onClick={() =>
@@ -73,7 +73,7 @@ const AdminPanel: FC = () => {
             )
           }
           icon={<ArrowUturnDownIcon />}
-          text="Refund All"
+          text="Вернуть средства"
         />
       </ul>
     </section>

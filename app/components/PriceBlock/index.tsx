@@ -21,7 +21,7 @@ const PriceBlock: FC = () => {
   const handleClick = async () => {
     if (!ticketPrice) return;
 
-    const notification = toast.loading("Buying your tickets...");
+    const notification = toast.loading("Транзакция в процессе...");
     try {
       const data = await BuyTickets([
         {
@@ -29,11 +29,11 @@ const PriceBlock: FC = () => {
         },
       ]);
 
-      toast.success("Tickets purchaise successfully!", {
+      toast.success("Билеты у вас в кармане", {
         id: notification,
       });
     } catch (err) {
-      toast.error("Whoops something went wrong", {
+      toast.error("Уппссс, что-то пошло не так... :(", {
         id: notification,
       });
     }
@@ -46,11 +46,11 @@ const PriceBlock: FC = () => {
     >
       <div className="stats-сontainer w-full p-5 ">
         <div className={styles.changeTitleBlock}>
-          <h2>Price per ticket</h2>
+          <h2>Цена за билет:</h2>
           <p>{formatData(ticketPrice)}</p>
         </div>
         <div className={`${styles.changeInputBlock} bg-bgColor2`}>
-          <span>tickets</span>
+          <span>билетов:</span>
           <input
             type="number"
             min={1}
@@ -61,7 +61,7 @@ const PriceBlock: FC = () => {
         </div>
         <ul className={styles.textListBlock}>
           <DescTextPrice
-            leftText="Total cost of tickets"
+            leftText="Общая стоимость билетов:"
             rightText={`${
               +formatData(ticketPrice).split(" ")[0] * quantity
             } matic`}
@@ -69,12 +69,12 @@ const PriceBlock: FC = () => {
             fontWeight="font-extrabold"
           />
           <DescTextPrice
-            leftText="Service fees"
+            leftText="Сервисный сбор:"
             rightText={formatData(ticketCommission)}
             textSize="text-xs"
           />
           <DescTextPrice
-            leftText="+ Network fees"
+            leftText="+ Сетевые сборы"
             rightText="TBC"
             textSize="text-xs"
           />
@@ -87,7 +87,7 @@ const PriceBlock: FC = () => {
           onClick={handleClick}
           className={styles.drawBtn}
         >
-          Buy {quantity} Tickets for{" "}
+          Купить {quantity} билет за{" "}
           {ticketPrice && +formatData(ticketPrice).split(" ")[0] * quantity}{" "}
           {currency}
         </button>

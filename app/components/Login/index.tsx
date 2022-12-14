@@ -13,13 +13,13 @@ const Login: FC = () => {
         <div className={styles.content}>
           <img src="./logo.png" alt="" />
           <h1>the nikogortio</h1>
-          <h2>Get starting by loggining with your MetaMask</h2>
+          <h2>Войдите в систему с помощью MetaMask</h2>
 
           {isLoading ? (
             <PropagateLoader color="#ffffff" size={20} />
           ) : (
             <button onClick={connectMyMetamask} className={styles.loginBtn}>
-              Login with MetaMask
+              Войти
             </button>
           )}
         </div>

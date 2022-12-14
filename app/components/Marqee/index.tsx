@@ -10,9 +10,9 @@ const Marqee: FC = () => {
   return (
     <Marquee className={styles.marqee} gradient={false} speed={100}>
       <div className={styles.main}>
-        <h4>Last winner: {lastWinner?.toString()}</h4>
+        <h4>Предыдущий победитель: {lastWinner?.toString()}</h4>
         <h4>
-          Previous winnings: {lastWinnerAmount && formatData(lastWinnerAmount)}
+          Предыдущий выигрыш: {lastWinnerAmount && formatData(lastWinnerAmount)}
         </h4>
       </div>
     </Marquee>

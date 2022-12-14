@@ -18,14 +18,14 @@ const Header: FC = () => {
           <div className={styles.avatarText}>
             <h2>the nikogortio</h2>
             <span>
-              User: {address?.substring(0, 5)}...
+              Пользователь: {address?.substring(0, 5)}...
               {address?.substring(address.length, address.length - 5)}
             </span>
           </div>
         </div>
         <div className={styles.buttonBlock}>
-          <Button link="#price-block" isActive text="Buy Tickets" />
-          <Button onClick={disconnect} text="Logout" />
+          <Button link="#price-block" isActive text="Покупка Билетов" />
+          <Button onClick={disconnect} text="Выйти" />
         </div>
         <div className={styles.burgerBtn}>
           <Bars3BottomRightIcon />

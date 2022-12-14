@@ -10,15 +10,15 @@ const NextDraw: FC = () => {
   return (
     <div className={`${styles.main} stats-сontainer`}>
       <div className={styles.titleBlock}>
-        <h1>The Next Draw</h1>
+        <h1>Следующий розыгрыш</h1>
       </div>
       <div className={styles.statBlock}>
         <div className={`${styles.statItem} stats bg-bgColor2`}>
-          <h2>Total Pool</h2>
+          <h2>Общий пул</h2>
           <p>{formatData(CurrentWinningReward)}</p>
         </div>
         <div className={`${styles.statItem} stats bg-bgColor2`}>
-          <h2>Tickets Remaining</h2>
+          <h2>Оставшиеся билеты</h2>
           <p>{RemainingTickets?.toNumber()}</p>
         </div>
       </div>

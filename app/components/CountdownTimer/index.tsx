@@ -18,17 +18,19 @@ const CountdownTimer: FC = () => {
     if (completed) {
       return (
         <div className={styles.timeBlock}>
-          <h2>Ticket sales have now CLOSED for this draw!</h2>
+          <h2>
+            Продажа билетов остановлена. Жмите на "Перезапустить розыгрыш".
+          </h2>
         </div>
       );
     } else {
       return (
         <div className={styles.timeBlock}>
-          <h2 className="animate-bounce">Time Remaining:</h2>
+          <h2 className="animate-bounce">Осталось времени:</h2>
           <ul className={styles.timeList}>
-            <TimeBlock value={hours} text="hours" />
-            <TimeBlock value={minutes} text="minutes" />
-            <TimeBlock value={seconds} text="seconds" />
+            <TimeBlock value={hours} text="часа" />
+            <TimeBlock value={minutes} text="мин." />
+            <TimeBlock value={seconds} text="сек." />
           </ul>
         </div>
       );

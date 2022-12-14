@@ -8,16 +8,16 @@ const WinnerInfo: FC = () => {
   const { WithdrawWinnings, winnings } = useTWImports();
 
   const onWithDrawingFunction = async () => {
-    const notification = toast.loading("Withdrawing winning...");
+    const notification = toast.loading("Вывод выигрыша...");
 
     try {
       const { data } = await WithdrawWinnings([{}]);
 
-      toast.success("Winnings withdrawn successfully!", {
+      toast.success("Урааа, выигрыш у Вас в кошельке!", {
         id: notification,
       });
     } catch (err) {
-      toast.error("Whoops something went wrong", {
+      toast.error("Уппсс, что-то пошло не так :(", {
         id: notification,
       });
       console.log(err);
@@ -28,8 +28,8 @@ const WinnerInfo: FC = () => {
     <section className={styles.main}>
       <button onClick={onWithDrawingFunction} className={styles.btn}>
         <p className="font-semibold">Winner Winner Chicken Dinner!</p>
-        <p className="mb-[20px]">Total winnings: {formatData(winnings)}</p>
-        <p className="font-semibold">click here to withdraw</p>
+        <p className="mb-[20px]">Общая сумма: {formatData(winnings)}</p>
+        <p className="font-semibold">жми и забирай свой выигрыш</p>
       </button>
     </section>
   );
