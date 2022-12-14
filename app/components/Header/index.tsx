@@ -30,7 +30,7 @@ const Header: FC = () => {
         <div className={styles.burgerBtn}>
           <Bars3BottomRightIcon />
           <span className={styles.logoutMinScreen}>
-            <Button onClick={disconnect} text="logout" />
+            <Button onClick={disconnect} text="Выйти" />
           </span>
         </div>
       </Layout>
